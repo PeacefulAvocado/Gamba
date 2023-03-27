@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    }
+h1{
+    text-align: center;
+    font-size: 4vw;
+}
+.menu{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    background-color: rgb(36, 30, 30);
+    position: sticky;
+    top: 0;
+    
+      }
+.menu a{
+    color: #4664c5;
+    text-decoration: none;
+    font-size: 2vw;
+    font-variant: small-caps;
+    font-weight: 600;
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu a:hover{
+    color: #577bf1;
+}
+
+.menu .negyzet{
+    width: 8px;
+    height: 8px;
+    background: #577bf1;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu :nth-child(1):hover ~ .negyzet{
+    transform: translateX(9.5vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(2):hover ~ .negyzet{
+    transform: translateX(29vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(3):hover ~ .negyzet{
+    transform: translateX(48.25vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(4):hover ~ .negyzet{
+    transform: translateX(67.25vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+#shrek{
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    height:92px
+}
+
+main{
+    padding: 20px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  20vw 20vw 20vw;
+    grid-gap: 30px;
+}
+.item{
+    padding: 10px;
+}
+.kep{
+    text-align: center;
+}
+.fooldalkep{
+    width: 50%;
+}
+.leiras{
+    text-align: left;
+    text-indent: 25px;
+    font-size: 1.2vw;
+    word-break: normal;
+}
