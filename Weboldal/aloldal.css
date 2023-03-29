@@ -81,21 +81,14 @@ header:after{
     opacity: 1;
 }
 
-#shrek{
-    position: absolute;
-    top: 80px;
-    left: 100px;
-    height:92px
-}
-
 main{
     padding: 20px;
 }
 
 .grid{
     display: grid;
-    grid-template-columns: 4fr 1fr 4fr;
-    grid-template-rows:  20vw 20vw 20vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  30vw 30vw 30vw;
     grid-gap: 10px;
     
 }
@@ -105,15 +98,17 @@ main{
 .kep{
     text-align: center;
 }
-.fooldalkep{
-    width: 80%;
+.aloldalkep{
+    width: 90%;
 }
+
 .leiras{
     padding-top:auto;
     padding-bottom: auto;
     
 }
 .leiras p{
+    margin:0;
     text-align: left;
     text-indent: 25px;
     font-size: 1.2vw;
@@ -122,61 +117,6 @@ main{
     
 }
 
-.jateknev{
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    display: inline-block;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    
-    text-align: center;
-    border-right: 3px solid black;
-}
-.jateknev p{
-    transform: rotateZ(180deg);
-    padding-right:40%;
-    padding-left: 10%;
-    margin: 0;
-    font-size: 1.8vw;
-    animation: szinvalto 5s infinite;
-    
-}
-@keyframes szinvalto{
-    0%{
-        color: rgb(255, 2, 2)
-    }
-    50%{
-        color: #00ffb3;
-    }
-    100%{
-        color: #ffb300;
-    }
-}
-
-/*footer*/
-.keszitok ul{
-    list-style-type: none;
-    display: table;
-    margin-left: auto;
-    margin-right:auto;
-    font-size: 20px;
-}
-.keszitok ul li {
-    float: left;
-    padding: 16px;
-    font-size: 1.4vw;
-}
-.keszitok a{
-    text-decoration: none;
-    color: black;
-}
-.keszitettek{
-    text-align: center;
-    font-size: 1.5vw;
-}
-
-/*scrollbar*/
 ::-webkit-scrollbar {
     width: 10px;
 }

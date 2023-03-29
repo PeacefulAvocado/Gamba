@@ -6,37 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3425/3425938.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/d989f6e427.js"></script>
     <title>Játékok</title>
 </head>
 <body>
     <header>
         <h1>Játékok</h1>
     </header>
-    <img src="shrek-shrek-dance.gif" alt="Shrek" id="shrek">
+    <!--<img src="shrek-shrek-dance.gif" alt="Shrek" id="shrek">-->
     <nav class="menu">
         <a href="index.html">Főoldal</a>
-        <a href="#">Counter Stirik 1.6</a>
-        <a href="#">PUBG</a>
-        <a href="#">Blackjack</a>
+        <a href="counter.html">Counter Stirik 1.6</a>
+        <a href="#pubg">PUBG</a>
+        <a href="#blackjack">Blowjob</a>
         <div class="negyzet"></div>
         
     </nav>
-    <button onclick="nagyit()" style="width: 100px; height:100px;"></button>
+   <!-- <button onclick="nagyit()" style="width: 100px; height:100px;"></button>-->
     <main>
             <div class="grid">
-                    <div class="item kep"><img class="fooldalkep" src="cs_teaser.jpg" alt="Counter Strike 1.6"></div>
+                    <div class="item kep" id="cs"><img class="fooldalkep" src="cs_teaser.jpg" alt="Counter Strike 1.6"></div>
+                    <div class="jateknev"><p>Counter Strike</p></div>
                     <div class="item leiras"><p>A Counter-Strike (röviden CS) egy taktikai, belső nézetű akciójáték (FPS), 
                         melyben a fő hangsúly a csapatjátékon van. Az első béta verzió 1999. június 19-én látta 
                         meg a napvilágot a Half-Life modifikációjaként. Az 1.0-s verzió után a Counter-Strike 
                         mint önálló játék is megjelent, ezt a boltban kapható független verzióját nevezzük dobozosnak 
                         (vagy retail). Emellett továbbra is elérhető Half-Life mod formájában. Frissítések mindkét 
                         változathoz letölthetők.</p></div>
-                    <div class="item kep"><img class="fooldalkep" src="pubg_teaser.jpg" alt="PUBG"></div>
+                    <div class="item kep "id ="pubg"><img class="fooldalkep" src="pubg_teaser.jpg" alt="PUBG"></div>
+                    <div class="jateknev"><p>PUBG</p></div>
                     <div class="item leiras"><p>A PlayerUnknown’s Battlegrounds (röviden: PUBG) egy többjátékos módú 
                         battle royale játék, amelyet Brendan Greene tervezett és a PUBG Studios fejleszt. A játék 
                         2017. március 23-án jelent meg korai hozzáférésű játékként a Steamen, majd 2017. december 
                         21-én került ki az 1.0-s verziója.</p></div>
-                    <div class="item kep"><img class="fooldalkep" src="blackjack_teaser.png" alt="Blackjack"></div>
+                    <div class="item kep " id="blackjack "><img class="fooldalkep" src="blackjack_teaser.png" alt="Blackjack"></div>
+                    <div class="jateknev"><p>Blackjack</p></div>
                     <div class="item leiras"><p>A huszonegy egy kártyajáték, melyet 52 lapos francia kártyával 
                         játszanak dzsókerek nélkül. Blackjack néven is ismert. A játék célja, hogy a játékos 
                         lapjai összértéke minél közelebb legyen a huszonegyhez, de azt ne lépje túl.</p></div>
@@ -44,11 +48,28 @@
 
     </main>
     <footer>
+        <div class="keszitok">
+                
+            <h2 class="keszitettek">Készítették</h2>
+            <hr>
+            <ul>
+                   <li> 
+                    <a href="https://www.instagram.com/k054.daniel/"><i class="fa fa-instagram"></i> Kósa Dániel</a>
+                    </li>
+                   <li>
+                    <a href="https://www.instagram.com/tothjonas/"><i class="fa fa-instagram"></i> Tóth Jónás</a>
+                </li> 
+                   <li>
+                    <a href="https://www.instagram.com/bence_acs/"> <i class="fa fa-instagram"></i> Ács Bence</a>
+                </li>
+            </ul>
+            
+        </div>
 
     </footer>
     
 </body>
-<script>
+<!--<script>
     var szam = 0;
     function nagyit(){
         if(szam==0){
@@ -63,5 +84,5 @@
         }
         
     }
-</script>
+</script>-->
 </html>
