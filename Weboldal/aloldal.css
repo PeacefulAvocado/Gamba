@@ -88,7 +88,7 @@ main{
 .grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:  30vw 30vw 30vw;
+    grid-template-rows:  30vw 40vw 30vw 30vw;
     grid-gap: 10px;
     
 }
