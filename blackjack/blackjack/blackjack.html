@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="blackjack.js"></script>
+</head>
+<body>
+    <h3>Bank:</h3>
+    <p id="bank">1000</p>
+    <h3>Bet: </h3>
+    <p id="bet"></p>
+    <div id="gombok">
+        <button onclick="Start()">Deal</button>
+        <button onclick="Add(1)">1</button>
+        <button onclick="Add(5)">5</button>
+        <button onclick="Add(25)">25</button>
+        <button onclick="Add(50)">50</button>
+        <button onclick="Add(100)">100</button>
+        <button onclick="Add(500)">500</button>
+        <button onclick="Add(1000)">1000</button>
+        <button onclick="Add(5000)">5000</button>
+        <button onclick="Add(10000)">10000</button>
+        <button onclick="Add('allin')">All in</button>
+    </div>
+    <div id="jatek">
+        <div id="dealer">
+            <h1>Dealer:</h1>
+
+            <h3>Ertek: </h3>
+            <h3 id="dertek"></h3>
+        </div>
+        <div id="jatekos">
+            <h1>Jatekos:</h1>
+
+            <button onclick="Hit()">Hit</button>
+            <button onclick="Stand()">Stand</button>
+            <button onclick="Double()" id="double">Double</button>
+            <h3>Ertek: </h3>
+        <h3 id="jertek"></h3>
+        </div>
+    </div>
+    <div id="overlay"><p id="eredmeny"></p></div>
+</body>
+</html>
