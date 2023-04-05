@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="blackjack.js"></script>
+</head>
+<body>
+    <section id="header"><h1>BlackJack</h1></section>
+    <section id="contents">
+            <h3>Bank:</h3>
+            <p id="bank">1000</p>
+            <h3>Bet: </h3>
+            <p id="bet"></p>
+            <div id="gombok">
+               
+                <button onclick="Add(1)" ><img src="Chicks/1.png" alt="1" class="chip"></button>
+                <button onclick="Add(5)"><img src="Chicks/5.png" alt="5" class="chip"></button>
+                <button onclick="Add(25)"><img src="Chicks/25.png" alt="25" class="chip"></button>
+                <button onclick="Add(50)"><img src="Chicks/50.png" alt="50" class="chip"></button>
+                <button onclick="Add(100)"><img src="Chicks/100.png" alt="100" class="chip"></button>
+                <button onclick="Add(500)"><img src="Chicks/500.png" alt="500" class="chip"></button>
+                <button onclick="Add(1000)"><img src="Chicks/1000.png" alt="1000" class="chip"></button>
+                <button onclick="Add(5000)"><img src="Chicks/5000.png" alt="5000" class="chip"></button>
+                <button onclick="Add(10000)"><img src="Chicks/10000.png" alt="10000" class="chip"></button>
+                <button id="modeselector" onclick="Mode()" class="operator">+</button>
+                <button onclick="Add('allin')" id="allin" class="operator">All in</button>
+                
+            </div>
+            <button onclick="Start()" id="deal" class="operator">Deal</button>
+            <div id="jatek">
+                <div id="dealer">
+                    <h1>Dealer:</h1>
+        
+                    <h3>Ertek: </h3>
+                    <h3 id="dertek"></h3>
+                </div>
+                <div id="jatekos">
+                    <h1>Jatekos:</h1>
+        
+                    <button onclick="Hit()">Hit</button>
+                    <button onclick="Stand()">Stand</button>
+                    <button onclick="Double()" id="double">Double</button>
+                    <h3>Ertek: </h3>
+                <h3 id="jertek"></h3>
+                </div>
+            </div>
+            <div id="overlay"><p id="eredmeny"></p></div>
+    </section>
+    
+</body>
+</html>
