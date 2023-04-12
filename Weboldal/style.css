@@ -1,4 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+*{
+    --cim_linear1: rgba(36, 30, 30, 0.863);
+    --cim_linear2: rgb(255, 255, 255);
+    --menu_bgcolor: rgb(36, 30, 30);
+    --menu_linkcolor: #4664c5;
+    --menu_hovercolor: #577bf1;
+    --menu_negyzetcolor: #577bf1;
+    --lenyilo_color:#4664c5;
+    --lenyilo_korvonal: #4664c5;
+    --lenyilo_hatter: #f9f9f9;
+    --lenyilo_linkcolor:black;
+    --lenyilo_hover:#f1f1f1;
+    --lenyilo_gombhover:#577bf1;
+    --jateknev_vonal: black;
+    --szinvalot_1:rgb(255, 2, 2);
+    --szinvalot_2:#00ffb3;
+    --szinvalot_3:#ffb300;
+    --keszitok_linkcolor: black;
+    --scrollbar_hatter:rgb(36, 30, 30);
+    --scrollbar_arnyek:rgba(0, 0, 0, 0.3);
+    --scrollbar_color:#4664c5;
+}
+
 html{
     font-family: 'Space Mono', monospace, sans-serif;
 }
@@ -12,7 +35,7 @@ h1{
 }
 header{
     position: relative;
-    height: 180px;
+    height: 10vw;
 }
 header:after{
     content:"";
@@ -41,7 +64,7 @@ header:after{
     font-size: 2vw;
     font-variant: small-caps;
     font-weight: 600;
-    width: 24%;
+    width: 23.5%;
     text-align: center;
     display: inline-block;
     transition: all 0.2s ease-in-out;
@@ -60,33 +83,85 @@ header:after{
     transition: all 0.2s ease-in-out;
 }
 
-.menu :nth-child(1):hover ~ .negyzet{
+.menu :nth-child(2):hover ~ .negyzet{
     transform: translateX(9.5vw);
     transition: all 0.2s ease-in-out;
     opacity: 1;
 }
-.menu :nth-child(2):hover ~ .negyzet{
+.menu :nth-child(3):hover ~ .negyzet{
     transform: translateX(29vw);
     transition: all 0.2s ease-in-out;
     opacity: 1;
 }
-.menu :nth-child(3):hover ~ .negyzet{
-    transform: translateX(48.25vw);
+.menu :nth-child(4):hover ~ .negyzet{
+    transform: translateX(47.9vw);
     transition: all 0.2s ease-in-out;
     opacity: 1;
 }
-.menu :nth-child(4):hover ~ .negyzet{
+.menu :nth-child(5):hover ~ .negyzet{
     transform: translateX(67.25vw);
     transition: all 0.2s ease-in-out;
     opacity: 1;
 }
+.menu .icon {
+    display: none;
+  }
 
-#shrek{
+/*Témaválasztó lenyíló menü*/
+  .dropbtn {
+    background: none;
+    color: #4664c5;
+    font-size:2vw;
+    border: none;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+    padding: 10px;
+    border:1px solid #4664c5;
+
+  }
+  
+  .dropdown {
     position: absolute;
-    top: 80px;
-    left: 100px;
-    height:92px
-}
+    top:0;
+    left:0;
+    height: 100%;
+    
+    z-index: 10;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 16vw  !important;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: calc(100% - 32px);
+    text-align: left;
+    font-size: 2vw;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #577bf1;
+  }
 
 main{
     padding: 20px;
@@ -144,7 +219,7 @@ main{
 }
 @keyframes szinvalto{
     0%{
-        color: rgb(255, 2, 2)
+        color: rgb(255, 2, 2);
     }
     50%{
         color: #00ffb3;
@@ -161,11 +236,12 @@ main{
     margin-left: auto;
     margin-right:auto;
     font-size: 20px;
+    padding-left: 0px;
 }
 .keszitok ul li {
     float: left;
     padding: 16px;
-    font-size: 1.4vw;
+    font-size: 1.6vw;
 }
 .keszitok a{
     text-decoration: none;
@@ -173,7 +249,7 @@ main{
 }
 .keszitettek{
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 /*scrollbar*/
@@ -191,3 +267,139 @@ main{
     border-radius: 3px;
   }
   
+  @media screen and (max-width: 620px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 25vw 45vw 8vw 23vw 45vw 8vw 25vw;
+    }
+    .jateknev{
+        display: inline-block;
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        text-align: center;
+        border-bottom:3px solid black;
+        border-right:none;
+        margin:0;
+        
+    }
+    .jateknev p{
+        transform: rotateZ(0deg);
+        text-align: center;
+        margin: 0;
+        padding:0;
+        font-size: 4vw;
+        animation: szinvalto 5s infinite;
+        
+    }
+
+
+    .leiras p{
+        font-size: 2vw;
+        line-height: 15px;
+        text-align: justify;
+    }
+    .menu a{
+        width: 100%;
+        font-size: 20px;
+    }
+    .negyzet{
+        display: none;
+    }
+    .dropdown-content{
+        width: 20vw !important;
+    }
+    .dropdown-content a{
+        font-size:2.5vw;
+        padding: 5px 5px;
+        width: calc(100% - 10px);
+    }
+    
+    .keszitettek{
+        font-size: 4vw;
+    }
+    .keszitok ul li{
+
+        font-size: 3vw;
+    }
+
+  }
+  @media screen and (max-width: 500px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 25vw 45vw 8vw 23vw 45vw 8vw 25vw;
+        
+    }
+    .leiras p{
+        line-height: 13px;
+    }
+}
+
+  @media screen and (max-width: 416px){
+    .menu > a{
+        display: none;
+    }
+    .menu a.icon {
+        position: absolute;
+        font-size: 20px;
+        top: 13px;
+        right: 20px;
+        display: block;
+        width: auto;
+        
+      }
+      .menu{
+          height: 15px;
+      }
+      .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 33vw 45vw 8vw 23vw 45vw 8vw 25vw;
+        
+    }
+    .keszitok ul li{
+
+        float:none;
+        padding-bottom:5px;
+        padding-top: 0;
+    }
+    .dropdown-content{
+        width: 30vw !important;
+    }
+    .dropdown-content a{
+        font-size:3.5vw !important;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+  }
+  @media screen and (max-width: 416px) {
+    .menu.responsive {
+       
+        height: 120px;
+        padding-top: 40px;
+        
+    }
+    .menu.responsive .icon {
+      position: absolute;
+      top: 13px;
+      right: 20px;
+      
+    }
+    .menu.responsive a {
+      display: block;
+      text-align: left;
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 315px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 55vw 45vw 8vw 40vw 45vw 8vw 25vw;
+        
+    }
+    .leiras p{
+        line-height: 10px;
+        font-size: 3vw;
+    }
+}

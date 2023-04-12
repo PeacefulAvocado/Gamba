@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3425/3425938.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://use.fontawesome.com/d989f6e427.js"></script>
     <title>Játékok</title>
@@ -13,16 +14,27 @@
     <header>
         <h1>Játékok</h1>
     </header>
-    <!--<img src="shrek-shrek-dance.gif" alt="Shrek" id="shrek">-->
-    <nav class="menu">
+
+   
+    <nav class="menu" id="menu">
+            <div class="dropdown">
+                    <button class="dropbtn"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
+                    <div class="dropdown-content">
+                    <a href="#">Alapértelmezett</a>
+                    <a href="#">Relaxáló</a>
+                    <a href="#">Vidám</a>
+                    <a href="#">Goofy Ahh</a>
+                    </div>
+                  </div>
         <a href="index.html">Főoldal</a>
-        <a href="counter.html">Counter Stirik 1.6</a>
-        <a href="#pubg">PUBG</a>
-        <a href="#blackjack">Blowjob</a>
+        <a href="counter.html">Counter Strike</a>
+        <a href="pubg.html">PUBG</a>
+        <a href="#blackjack">BlackJack</a>
+        <a href="javascript:void(0);" class="icon" onclick="Menu()"><i class="fa fa-bars"></i></a>
         <div class="negyzet"></div>
         
     </nav>
-   <!-- <button onclick="nagyit()" style="width: 100px; height:100px;"></button>-->
+
     <main>
             <div class="grid">
                     <div class="item kep" id="cs"><img class="fooldalkep" src="cs_teaser.jpg" alt="Counter Strike 1.6"></div>
@@ -50,7 +62,7 @@
     <footer>
         <div class="keszitok">
                 
-            <h2 class="keszitettek">Készítették</h2>
+            <h2 class="keszitettek">Készítették:</h2>
             <hr>
             <ul>
                    <li> 
@@ -69,20 +81,14 @@
     </footer>
     
 </body>
-<!--<script>
-    var szam = 0;
-    function nagyit(){
-        if(szam==0){
-            document.getElementById("shrek").style.height = "1000px";
-            document.getElementById("shrek").style.width = "1000px";
-            szam=1;
-        }
-        else{
-            document.getElementById("shrek").style.height = "100px";
-            document.getElementById("shrek").style.width = "100px";
-            szam = 0;
-        }
-        
-    }
-</script>-->
+<script>
+        function Menu() {
+            var x = document.getElementById("menu");
+            if (x.className === "menu") {
+                x.className += " responsive";
+            } else {
+            x.className = "menu";
+                }
+            }
+        </script>
 </html>
