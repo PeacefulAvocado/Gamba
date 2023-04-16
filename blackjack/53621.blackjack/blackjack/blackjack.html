@@ -11,11 +11,16 @@
 <body>
     <section id="header"><h1>BlackJack</h1></section>
     <section id="contents">
-        <div class="texts">
-            <h3>Bank:</h3>
-            <p id="bank">1000<br></p>
-            <h3>Bet: </h3>
-            <p id="bet">0</p></div>
+        <div class="texts" id="container">
+            
+                <h3 id="bank">Bank:1000</h3>
+           
+           
+    
+                <h3 id="bet">Bet:0</h3>
+           
+            </div>
+            
             <div id="gombok">
                
                 <button onclick="Add(1)" ><img src="Chicks/1.png" alt="1" class="chip"></button>
@@ -27,29 +32,40 @@
                 <button onclick="Add(1000)"><img src="Chicks/1000.png" alt="1000" class="chip"></button>
                 <button onclick="Add(5000)"><img src="Chicks/5000.png" alt="5000" class="chip"></button>
                 <button onclick="Add(10000)"><img src="Chicks/10000.png" alt="10000" class="chip"></button>
+                
+                
+                
+            </div>
+            <div id="row.operator">
                 <button id="modeselector" onclick="Mode()" class="operator">+</button>
                 <button onclick="Add('allin')" id="allin" class="operator">All in</button>
                 <button onclick="Start()" id="deal" class="operator">Deal</button>
-                
             </div>
             <div id="jatek">
                 <div id="dealer">
-                    <h1>Dealer:</h1>
-
-                    <h3>Ertek: </h3>
-                    <h3 id="dertek"></h3>
+                    <div class="ingametxt">
+                         <h1>Dealer:</h1>
+                    <h3 id="dertek">Ertek: </h3>
+                    </div>
+                   
+                  
                 </div>
                 <div id="jatekos">
-                    <h1>Jatekos:</h1>
-        
-                    <button onclick="Hit()">Hit</button>
-                    <button onclick="Stand()">Stand</button>
-                    <button onclick="Double()" id="double">Double</button>
-                    <button onclick="Split()" id="split">Split</button>
-                    <button onclick="Insurance()" id="insurance">Insurance</button>
-                    <h3>Ertek: </h3>
-                <h3 id="jertek"></h3>
+                    <div class="ingametxt">
+                         <h1>Jatekos:</h1>
+                    <h3 id="jertek">Ertek: </h3>
+                    </div>
+                   
+              
                 </div>
+                <div id="buttoncontainer">
+                    <button onclick="Hit()" class="ingamebuttons">Hit</button>
+                    <button onclick="Stand()" class="ingamebuttons">Stand</button>
+                    <button onclick="Double()" id="double" class="ingamebuttons">Double</button>
+                    <button onclick="Split()" id="split" class="ingamebuttons">Split</button>
+                    <button onclick="Insurance()" id="insurance" class="ingamebuttons">Insurance</button>
+                </div>
+                
             </div>
             <div id="overlay"><p id="eredmeny"></p></div>
     </section>

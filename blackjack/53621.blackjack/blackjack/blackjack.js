@@ -37,19 +37,19 @@ function Ertek(szereplo)
     {
         jertek = 0;
         jatekos.forEach(item => jertek = jertek + item[0]);
-        document.getElementById("jertek").innerHTML = jertek;
+        document.getElementById("jertek").innerHTML = "Érték: " +jertek;
     }
     else if (szereplo == "dealer")
     {
         dertek = 0;
         dealer.forEach(item => dertek = dertek + item[0]);
-        document.getElementById("dertek").innerHTML = dertek;
+        document.getElementById("dertek").innerHTML = "Érték: " +dertek;
     }
     else if (szereplo == "jatekos_split")  
     {
         jsertek = 0;
         jatekos_split.forEach(item => jsertek = jsertek + item[0]);
-        document.getElementById("jertek").innerHTML = jsertek;
+        document.getElementById("jertek").innerHTML = "Érték: " +jsertek;
     }
 }
 
@@ -69,7 +69,7 @@ function Osztas()
     dealer.push(lapok[szamlalo]);
     Kep(lapok[szamlalo][1], 'dealer', "create")
     szamlalo++;
-    document.getElementById("dertek").innerHTML = dealer[1][0];
+    document.getElementById("dertek").innerHTML = "Érték: "+dealer[1][0];
     Ertek("jatekos");
     if (jertek == 21)
     {
@@ -79,11 +79,11 @@ function Osztas()
     }
     if (bank >= bet)
     {
-        document.getElementById("double").style.display = "block";
+        document.getElementById("double").style.display = "inline";
     }
     if (jatekos[0][1][0] == jatekos[1][1][0] && bank >= bet)  
     {
-        document.getElementById("split").style.display = "block";
+        document.getElementById("split").style.display = "inline";
     }
     if (jatekos[0][1][0] == "A" && jatekos[1][1][0] == "A")
     {
@@ -93,7 +93,7 @@ function Osztas()
     }
     if (dealer[1][1][0] === "A" && bet/2 <= bank)
     {
-        document.getElementById("insurance").style.display = "block";
+        document.getElementById("insurance").style.display = "inline";
     }
 
 }
@@ -682,7 +682,7 @@ async function Stand()
 
         if (bank >= bet)
         {
-            document.getElementById("double").style.display = "block";
+            document.getElementById("double").style.display = "inline";
         }
         if (jsertek == 21)
         {
@@ -702,6 +702,9 @@ function Start()
         Osztas();
         document.getElementById("jatek").style.display = "block";
         document.getElementById("gombok").style.display = "none";
+        document.getElementById("deal").style.display = "none";
+        document.getElementById("row.operator").style.display = "none";
+        document.getElementById("deal").style.display = "none";
     }
 
 }
@@ -730,23 +733,23 @@ function Add(amount)
     {
         bet = bet + amount;
         bank = bank - amount;
-        document.getElementById("bet").innerHTML = bet;
-        document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ bet;
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
     }
     else if (amount == "allin")
     {
         bet = bet + bank;
         bank = 0;
-        document.getElementById("bet").innerHTML = bet;
-        document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ bet;
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
     } 
     }else{
         if (amount <= bet)
     {
         bank = bank + amount;
         bet = bet - amount;
-        document.getElementById("bet").innerHTML = bet;
-        document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ bet;
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
     }
 }
     
@@ -764,15 +767,15 @@ async function End(bust)
     if (bust == 0)
     {
         bet = 0;
-        document.getElementById("bet").innerHTML = 0;
-        document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ 0;
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
         eredmeny = "Vesztettél!";
     }
     else if (bust == 1)
     {
         bank = bank + 2 * bet;
-        document.getElementById("bet").innerHTML = 0;
-        document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ 0;
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
         eredmeny = "Nyertél!";
     }
     else if (bust == 2)
@@ -780,22 +783,22 @@ async function End(bust)
         if (jertek > dertek && jertek <= 21)
         {
             bank = bank + 2 * bet;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
         }
         else if (dertek > jertek || jertek > 21)
         {
             bet = 0;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
         }
         else if (jertek == dertek)
         {
             bank = bank + bet;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Push!";
         }
     }
@@ -825,40 +828,40 @@ async function End(bust)
         document.getElementById("overlay").style.display = "block";
         bank = bank+Math.floor(bet*2.5)
         bet = 0;
-        document.getElementById("bet").innerHTML = 0;
-                document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ 0;
+                document.getElementById("bank").innerHTML = "Bank:" +bank;
         } 
         else if (jsertek > dertek && jsertek <= 21 && dertek <= 21)
         {
             bank = bank + 2 * bet2;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
         }
         else if (dertek > jsertek && jsertek <= 21 && dertek <= 21)
         {
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
         }
         else if (jsertek == dertek && jsertek <= 21 && dertek <= 21)
         {
             bank = bank + bet2;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Push!";
         }
         else if (jsertek > 21)
             {
-                document.getElementById("bet").innerHTML = 0;
-                document.getElementById("bank").innerHTML = bank;
+                document.getElementById("bet").innerHTML ="Bet:"+ 0;
+                document.getElementById("bank").innerHTML = "Bank:" +bank;
                 eredmeny = "Vesztettél!";
             }
             else if (jsertek <=21 && dertek > 21)
             {
                 bank = bank + 2 * bet2;
-                document.getElementById("bet").innerHTML = 0;
-                document.getElementById("bank").innerHTML = bank;
+                document.getElementById("bet").innerHTML ="Bet:"+ 0;
+                document.getElementById("bank").innerHTML = "Bank:" +bank;
                 eredmeny = "Nyertél!";
             }
             
@@ -889,42 +892,42 @@ async function End(bust)
         document.getElementById("overlay").style.display = "block";
         bank = bank+Math.floor(bet*2.5)
         bet = 0;
-        document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+        document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
         }
         else if (jertek > dertek && jertek <= 21 && dertek <= 21)
         {
             bank = bank + 2 * bet1;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
         }
         else if (dertek > jertek && jertek <= 21 && dertek <= 21)
         {
             //bet = 0;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
         }
         else if (jertek == dertek && jertek <= 21 && dertek <= 21)
         {
             bank = bank + bet1;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Push!";
         }
         else if (jertek > 21)
         {
             //bet = 0;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
         }
         else if (jertek <=21 && dertek > 21)
         {
             bank = bank + 2 * bet1;
-            document.getElementById("bet").innerHTML = 0;
-            document.getElementById("bank").innerHTML = bank;
+            document.getElementById("bet").innerHTML ="Bet:"+ 0;
+            document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
         }
         document.getElementById("eredmeny").innerHTML = eredmeny;
@@ -945,12 +948,12 @@ async function End(bust)
         document.getElementById("overlay").style.display = "block";
         bank = bank+Math.floor(bet*2.5)
         bet = 0;
-        document.getElementById("bet").innerHTML = 0;
-                document.getElementById("bank").innerHTML = bank;}
+        document.getElementById("bet").innerHTML ="Bet:"+ 0;
+                document.getElementById("bank").innerHTML = "Bank:" +bank;}
                 else{
                     bank = bank + bet;
-                document.getElementById("bet").innerHTML = 0;
-                document.getElementById("bank").innerHTML = bank;
+                document.getElementById("bet").innerHTML ="Bet:"+ 0;
+                document.getElementById("bank").innerHTML = "Bank:" +bank;
                 eredmeny = "Push!";
                 }
 
@@ -982,7 +985,10 @@ function Menu()
         images[0].parentNode.removeChild(images[0]);
     }
     document.getElementById("jatek").style.display = "none";
-    document.getElementById("gombok").style.display = "block";
+    document.getElementById("gombok").style.display = "flex";
+    document.getElementById("deal").style.display = "inline";
+    document.getElementById("row.operator").style.display = "inline";
+
 }
 
 function sleep (time) {
@@ -992,7 +998,7 @@ function sleep (time) {
 function Double() 
 {
     bank = bank - bet;
-    document.getElementById("bank").innerHTML = bank;
+    document.getElementById("bank").innerHTML = "Bank:" +bank;
     if (split)
     {
         if (splitsz == 0)
@@ -1007,13 +1013,13 @@ function Double()
         {
             double = 1;
         }
-        document.getElementById("bet").innerHTML = bet;
+        document.getElementById("bet").innerHTML ="Bet:"+ bet;
         document.getElementById("double").style.display = "none";
         Hit();
     }
     else {
         bet = bet * 2;
-        document.getElementById("bet").innerHTML = bet;
+        document.getElementById("bet").innerHTML ="Bet:"+ bet;
         document.getElementById("double").style.display = "none";
         Hit();
     }
@@ -1035,7 +1041,7 @@ function Split()
         jatekos[0][0] = 11;
     }
     bank = bank - bet;
-    document.getElementById("bank").innerHTML = bank;
+    document.getElementById("bank").innerHTML = "Bank:" +bank;
     split = true;
     document.getElementById("split").style.display = "none";
     jatekos_split[0] = jatekos[1];
