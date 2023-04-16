@@ -20,7 +20,6 @@ var splitsz = 0;
 var aceacesplitvane = false;
 var double = -1;
 
-
 function Keveres()
 {
     for (let i = 0; i < 52; i++) {
@@ -145,6 +144,11 @@ function Kep(lap, szereplo, create)
         var img = document.createElement("img");
         img.src=filename;
         img.className="kartyalap";
+        /*const x = asd.offsetLeft;
+        const y = asd.offsetTop;
+        console.log(x, y)
+        document.getElementById("beuszo").style.transform = "translateX(" + x + "px)";
+        document.getElementById("beuszo").style.transform = "translateY(" + y + "px)";*/
         var src = document.getElementById(szereplo);
         src.appendChild(img);
     }
@@ -693,6 +697,7 @@ async function Stand()
 
 function Start()
 {
+    document.getElementById("beuszo").style.opacity = "1";
     lapok = [[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
     jatekos = [];
     jatekos_split = [];
@@ -1097,3 +1102,14 @@ async function Insurance(){
 function fordit(){
     document.getElementById("hatlap").style.transform ="rotateY(360deg)";
 }
+
+
+async function Utmutato(){
+    document.getElementById("overlay").style.display = "block";
+}
+
+function Ertettem(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("utmutato").style.display = "none";
+}
+
