@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+*{
+    --cim_color: #961f1f;
+    --cim_linear1: rgba(88, 16, 16, 0.863);
+    --cim_linear2: rgba(255, 255, 255, 0);
+    --menu_bgcolor: rgb(36, 30, 30);
+    --menu_linkcolor: #961f1f;
+    --menu_hovercolor: #da3232;
+    --menu_negyzetcolor: #da3232;
+    --lenyilo_color:#961f1f;
+    --lenyilo_korvonal: #961f1f;
+    --lenyilo_hatter: #cecece;
+    --lenyilo_arnyek: rgba(0,0,0,0.2);
+    --lenyilo_linkcolor:black;
+    --lenyilo_hover:#f1f1f1;
+    --lenyilo_gombhover:#da3232;
+    --leiras_color: white;
+    --jateknev_vonal: rgb(179, 62, 62);
+    --szinvalto_1:rgb(255, 0, 0);
+    --szinvalto_2:#9e0202;
+    --szinvalto_3:#cc0808;
+    --keszitok_linkcolor: rgb(255, 255, 255);
+    --keszitettek_h2: white;
+    --scrollbar_hatter:rgb(36, 30, 30);
+    --scrollbar_arnyek:rgba(0, 0, 0, 0.3);
+    --scrollbar_color:#961f1f;
+}
+
+html{
+    font-family: 'Space Mono', monospace, sans-serif;
+}
+body{
+    margin: 0;
+    background-image: url(img/dark_hatter.jpg);
+    }
+    
+h1{
+    text-align: center;
+    font-size: 4vw;
+    color: var(--cim_color)
+}
+header{
+    position: relative;
+    height: 10vw;
+}
+header:after{
+    content:"";
+    width:100%;
+    height:50%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:-1;
+    background: linear-gradient(to top, var(--cim_linear1) 0%, var(--cim_linear2) 100%);
+  }
+.menu{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    background-color: var(--menu_bgcolor);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+      }
+.menu a{
+    color: var(--menu_linkcolor);
+    text-decoration: none;
+    font-size: 2vw;
+    font-variant: small-caps;
+    font-weight: 600;
+    width: 23.5%;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu a:hover{
+    color: var(--menu_hovercolor);
+}
+
+.menu .negyzet{
+    width: 8px;
+    height: 8px;
+    background: var(--menu_negyzetcolor);
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu :nth-child(2):hover ~ .negyzet{
+    transform: translateX(9.5vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(3):hover ~ .negyzet{
+    transform: translateX(29vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(4):hover ~ .negyzet{
+    transform: translateX(47.9vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(5):hover ~ .negyzet{
+    transform: translateX(67.25vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu .icon {
+    display: none;
+  }
+
+/*Témaválasztó lenyíló menü*/
+  .dropbtn {
+    background: none;
+    color: var(--lenyilo_color);
+    font-size:2vw;
+    border: none;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+    padding: 10px;
+    border:1px solid var(--lenyilo_korvonal);
+
+  }
+  
+  .dropdown {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    
+    z-index: 10;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--lenyilo_hatter);
+    width: 16vw  !important;
+    box-shadow: 0px 8px 16px 0px var(--lenyilo_arnyek);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: var(--lenyilo_linkcolor);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: calc(100% - 32px);
+    text-align: left;
+    font-size: 2vw;
+  }
+  
+  .dropdown-content a:hover {background-color: var(--lenyilo_hover)}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: var(--lenyilo_gombhover);
+  }
+
+main{
+    padding: 20px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    grid-template-rows:  20vw 20vw 20vw;
+    grid-gap: 10px;
+    
+}
+.item{
+    padding: 10px;
+}
+.kep{
+    text-align: center;
+}
+.fooldalkep{
+    width: 80%;
+}
+.leiras{
+    padding-top:auto;
+    padding-bottom: auto;
+    
+}
+.leiras p{
+    text-align: left;
+    text-indent: 25px;
+    font-size: 1.2vw;
+    word-break: normal;
+    line-height: 1.6vw;
+    color: var(--leiras_color);
+    
+}
+
+.jateknev{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    
+    text-align: center;
+    border-right: 3px solid var(--jateknev_vonal);
+}
+.jateknev p{
+    transform: rotateZ(180deg);
+    padding-right:40%;
+    padding-left: 10%;
+    margin: 0;
+    font-size: 1.8vw;
+    animation: szinvalto 5s infinite;
+    
+}
+@keyframes szinvalto{
+    0%{
+        color: var(--szinvalto_1);
+    }
+    50%{
+        color: var(--szinvalto_2);
+    }
+    100%{
+        color: var(--szinvalto_3);
+    }
+}
+
+/*footer*/
+.keszitok ul{
+    list-style-type: none;
+    display: table;
+    margin-left: auto;
+    margin-right:auto;
+    font-size: 20px;
+    padding-left: 0px;
+}
+.keszitok ul li {
+    float: left;
+    padding: 16px;
+    font-size: 1.6vw;
+}
+.keszitok a{
+    text-decoration: none;
+    color: var(--keszitok_linkcolor);
+}
+.keszitettek{
+    text-align: center;
+    font-size: 2vw;
+    color: var(--keszitettek_h2)
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar_hatter);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px var(--scrollbar_arnyek);
+    background-color: var(--scrollbar_color);
+    border-radius: 3px;
+  }
+  
+  @media screen and (max-width: 620px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 25vw 45vw 8vw 23vw 45vw 8vw 25vw;
+    }
+    .jateknev{
+        display: inline-block;
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        text-align: center;
+        border-bottom:3px solid var(--jateknev_vonal);
+        border-right:none;
+        margin:0;
+        
+    }
+    .jateknev p{
+        transform: rotateZ(0deg);
+        text-align: center;
+        margin: 0;
+        padding:0;
+        font-size: 4vw;
+        animation: szinvalto 5s infinite;
+        
+    }
+
+
+    .leiras p{
+        font-size: 2vw;
+        line-height: 15px;
+        text-align: justify;
+    }
+    .menu a{
+        width: 100%;
+        font-size: 20px;
+    }
+    .negyzet{
+        display: none;
+    }
+    .dropdown-content{
+        width: 20vw !important;
+    }
+    .dropdown-content a{
+        font-size:2.5vw;
+        padding: 5px 5px;
+        width: calc(100% - 10px);
+    }
+    
+    .keszitettek{
+        font-size: 4vw;
+    }
+    .keszitok ul li{
+
+        font-size: 3vw;
+    }
+
+  }
+  @media screen and (max-width: 500px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 25vw 45vw 8vw 23vw 45vw 8vw 25vw;
+        
+    }
+    .leiras p{
+        line-height: 13px;
+    }
+}
+
+  @media screen and (max-width: 416px){
+    .menu > a{
+        display: none;
+    }
+    .menu a.icon {
+        position: absolute;
+        font-size: 20px;
+        top: 13px;
+        right: 20px;
+        display: block;
+        width: auto;
+        
+      }
+      .menu{
+          height: 15px;
+      }
+      .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 33vw 45vw 8vw 23vw 45vw 8vw 25vw;
+        
+    }
+    .keszitok ul li{
+
+        float:none;
+        padding-bottom:5px;
+        padding-top: 0;
+    }
+    .dropdown-content{
+        width: 30vw !important;
+    }
+    .dropdown-content a{
+        font-size:3.5vw !important;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+  }
+  @media screen and (max-width: 416px) {
+    .menu.responsive {
+       
+        height: 120px;
+        padding-top: 40px;
+        
+    }
+    .menu.responsive .icon {
+      position: absolute;
+      top: 13px;
+      right: 20px;
+      
+    }
+    .menu.responsive a {
+      display: block;
+      text-align: left;
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 315px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  45vw 8vw 55vw 45vw 8vw 40vw 45vw 8vw 25vw;
+        
+    }
+    .leiras p{
+        line-height: 10px;
+        font-size: 3vw;
+    }
+}

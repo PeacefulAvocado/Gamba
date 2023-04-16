@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 *{
+    --cim_color: black;
     --cim_linear1: rgba(36, 30, 30, 0.863);
     --cim_linear2: rgb(255, 255, 255);
     --menu_bgcolor: rgb(36, 30, 30);
@@ -9,14 +10,17 @@
     --lenyilo_color:#4664c5;
     --lenyilo_korvonal: #4664c5;
     --lenyilo_hatter: #f9f9f9;
+    --lenyilo_arnyek: rgba(0,0,0,0.2);
     --lenyilo_linkcolor:black;
     --lenyilo_hover:#f1f1f1;
     --lenyilo_gombhover:#577bf1;
+    --leiras_color: black;
     --jateknev_vonal: black;
-    --szinvalot_1:rgb(255, 2, 2);
-    --szinvalot_2:#00ffb3;
-    --szinvalot_3:#ffb300;
+    --szinvalto_1:rgb(255, 2, 2);
+    --szinvalto_2:#00ffb3;
+    --szinvalto_3:#ffb300;
     --keszitok_linkcolor: black;
+    --keszitettek_h2: black;
     --scrollbar_hatter:rgb(36, 30, 30);
     --scrollbar_arnyek:rgba(0, 0, 0, 0.3);
     --scrollbar_color:#4664c5;
@@ -32,6 +36,7 @@ body{
 h1{
     text-align: center;
     font-size: 4vw;
+    color: var(--cim_color);
 }
 header{
     position: relative;
@@ -45,7 +50,7 @@ header:after{
     bottom:0;
     left:0;
     z-index:-1;
-    background: linear-gradient(to top, rgba(36, 30, 30, 0.863) 0%,rgb(255, 255, 255) 100%);
+    background: linear-gradient(to top, var(--cim_linear1) 0%, var(--cim_linear2) 100%);
   }
 .menu{
     padding-left: 10%;
@@ -53,13 +58,13 @@ header:after{
     padding-top: 20px;
     padding-bottom: 20px;
     width: 80%;
-    background-color: rgb(36, 30, 30);
+    background-color: var(--menu_bgcolor);
     position: sticky;
     top: 0;
     z-index: 999;
       }
 .menu a{
-    color: #4664c5;
+    color: var(--menu_linkcolor);
     text-decoration: none;
     font-size: 2vw;
     font-variant: small-caps;
@@ -71,13 +76,13 @@ header:after{
 }
 
 .menu a:hover{
-    color: #577bf1;
+    color: var(--menu_hovercolor);
 }
 
 .menu .negyzet{
     width: 8px;
     height: 8px;
-    background: #577bf1;
+    background: var(--menu_negyzetcolor);
     opacity: 0;
     transform: translateX(30px);
     transition: all 0.2s ease-in-out;
@@ -110,7 +115,7 @@ header:after{
 /*Témaválasztó lenyíló menü*/
   .dropbtn {
     background: none;
-    color: #4664c5;
+    color: var(--lenyilo_color);
     font-size:2vw;
     border: none;
     cursor: pointer;
@@ -121,7 +126,7 @@ header:after{
     transition: all 0.2s ease-in-out;
     margin: 10px;
     padding: 10px;
-    border:1px solid #4664c5;
+    border:1px solid var(--lenyilo_korvonal);
 
   }
   
@@ -137,14 +142,14 @@ header:after{
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: var(--lenyilo_hatter);
     width: 16vw  !important;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px var(--lenyilo_arnyek);
     z-index: 1;
   }
   
   .dropdown-content a {
-    color: black;
+    color: var(--lenyilo_linkcolor);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -153,14 +158,14 @@ header:after{
     font-size: 2vw;
   }
   
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  .dropdown-content a:hover {background-color: var(--lenyilo_hover)}
   
   .dropdown:hover .dropdown-content {
     display: block;
   }
   
   .dropdown:hover .dropbtn {
-    background-color: #577bf1;
+    background-color: var(--lenyilo_gombhover);
   }
 
 main{
@@ -194,6 +199,7 @@ main{
     font-size: 1.2vw;
     word-break: normal;
     line-height: 1.6vw;
+    color: var(--leiras_color);
     
 }
 
@@ -206,7 +212,7 @@ main{
     text-orientation: mixed;
     
     text-align: center;
-    border-right: 3px solid black;
+    border-right: 3px solid var(--jateknev_vonal);
 }
 .jateknev p{
     transform: rotateZ(180deg);
@@ -219,13 +225,13 @@ main{
 }
 @keyframes szinvalto{
     0%{
-        color: rgb(255, 2, 2);
+        color: var(--szinvalto_1);
     }
     50%{
-        color: #00ffb3;
+        color: var(--szinvalto_2);
     }
     100%{
-        color: #ffb300;
+        color: var(--szinvalto_3);
     }
 }
 
@@ -245,11 +251,12 @@ main{
 }
 .keszitok a{
     text-decoration: none;
-    color: black;
+    color: var(--keszitok_linkcolor);
 }
 .keszitettek{
     text-align: center;
     font-size: 2vw;
+    color: var(--keszitettek_h2)
 }
 
 /*scrollbar*/
@@ -258,12 +265,12 @@ main{
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgb(36, 30, 30);
+    background-color: var(--scrollbar_hatter);
 }
 
 ::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #4664c5;
+    box-shadow: inset 0 0 6px var(--scrollbar_arnyek);
+    background-color: var(--scrollbar_color);
     border-radius: 3px;
   }
   

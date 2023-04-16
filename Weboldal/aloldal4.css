@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+*{
+    --cim_color: #ffdead;
+    --cim_linear1: rgba(201, 138, 66, 0.863);
+    --cim_linear2: rgba(255, 255, 255, 0);
+    --menu_bgcolor: rgb(36, 30, 30);
+    --menu_linkcolor: #cd853f;
+    --menu_hovercolor: #f5b47a;
+    --menu_negyzetcolor: #f5b47a;
+    --lenyilo_color:#cd853f;
+    --lenyilo_korvonal: #cd853f;
+    --lenyilo_hatter: #f0e6d8;
+    --lenyilo_arnyek: rgba(0,0,0,0.2);
+    --lenyilo_linkcolor:rgb(0, 0, 0);
+    --lenyilo_hover:#fff9f2;
+    --lenyilo_gombhover:#f5b47a;
+    --leiras_h2:#704214;
+    --leiras_p:#a75502;
+    --scrollbar_hatter:#3d2b1f;
+    --scrollbar_arnyek:rgba(0, 0, 0, 0.3);
+    --scrollbar_color:#7b3f00;
+}
+html{
+    font-family: 'Space Mono', monospace, sans-serif;
+}
+body{
+    margin: 0;
+    background-image: url(img/happy_bg.jpg);
+    }
+    
+h1{
+    text-align: center;
+    font-size: 4vw;
+    color: var(--cim_color);
+    text-shadow: 5px 5px 3px #A0522D;
+}
+header{
+    position: relative;
+    height: 10vw;
+}
+header:after{
+    content:"";
+    width:100%;
+    height:50%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:-1;
+    background: linear-gradient(to top, var(--cim_linear1) 0%,var(--cim_linear2) 100%);
+  }
+.menu{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    background-color: var(--menu_bgcolor);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+      }
+.menu a{
+    color: var(--menu_linkcolor);
+    text-decoration: none;
+    font-size: 2vw;
+    font-variant: small-caps;
+    font-weight: 600;
+    width: 23.5%;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu a:hover{
+    color: var(--menu_hovercolor);
+}
+
+.menu .negyzet{
+    width: 8px;
+    height: 8px;
+    background: var(--menu_negyzetcolor);
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu :nth-child(2):hover ~ .negyzet{
+    transform: translateX(9.5vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(3):hover ~ .negyzet{
+    transform: translateX(29vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(4):hover ~ .negyzet{
+    transform: translateX(47.9vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu :nth-child(5):hover ~ .negyzet{
+    transform: translateX(67.25vw);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+.menu .icon {
+    display: none;
+  }
+  /*Témaválasztó lenyíló menü*/
+  .dropbtn {
+    background: none;
+    color: var(--lenyilo_color);
+    font-size:2vw;
+    border: none;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+    padding: 10px;
+    border:1px solid var(--lenyilo_korvonal);
+
+  }
+  
+  .dropdown {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    
+    z-index: 10;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--lenyilo_hatter);
+    width: 16vw  !important;
+    box-shadow: 0px 8px 16px 0px var(--lenyilo_arnyek);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: var(--lenyilo_linkcolor);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: calc(100% - 32px);
+    text-align: left;
+    font-size: 2vw;
+  }
+  
+  .dropdown-content a:hover {background-color: var(--lenyilo_hover)}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: var(--lenyilo_gombhover);
+  }
+
+
+main{
+    padding: 20px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  30vw 40vw 30vw 30vw;
+    grid-gap: 10px;
+    
+}
+.item{
+    padding: 10px;
+}
+.kep{
+    text-align: center;
+}
+.aloldalkep{
+    width: 90%;
+}
+
+
+.leiras p{
+    margin:0;
+    text-align: left;
+    text-indent: 25px;
+    font-size: 1.2vw;
+    word-break: normal;
+    line-height: 1.6vw;
+    color: var(--leiras_p)
+    
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 2vw;
+    font-weight: 900;
+    color: var(--leiras_h2)
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar_hatter);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px var(--scrollbar_arnyek);
+    background-color: var(--scrollbar_color);
+    border-radius: 3px;
+  }
+  
+
+  @media screen and (max-width: 620px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  30vw 47vw 40vw 60vw 25vw 50vw 37vw 50vw;
+    }
+
+    .leiras p{
+        font-size: 2vw;
+        line-height: 15px;
+        text-align: justify;
+    }
+    .menu a{
+        width: 100%;
+        font-size: 20px;
+    }
+    .dropdown-content{
+        width: 20vw !important;
+    }
+    .dropdown-content a{
+        font-size:2.5vw;
+        padding: 5px 5px;
+        width: calc(100% - 10px);
+    }
+    .negyzet{
+        display: none;
+    }
+
+
+  }
+  @media screen and (max-width: 500px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  35vw 47vw 45vw 60vw 30vw 50vw 40vw 50vw;
+        
+    }
+    .leiras p{
+        line-height: 13px;
+    }
+}
+
+  @media screen and (max-width: 400px){
+    .menu > a{
+        display: none;
+    }
+    .menu a.icon {
+        position: absolute;
+        font-size: 20px;
+        top: 13px;
+        right: 20px;
+        display: block;
+        width: auto;
+        
+      }
+      .menu{
+          height: 15px;
+      }
+      .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  40vw 40vw 55vw 60vw 35vw 50vw 45vw 50vw;
+        
+    }
+    h2{
+        font-size: 4vw;
+    }
+    .dropdown-content{
+        width: 30vw !important;
+    }
+    .dropdown-content a{
+        font-size:3.5vw !important;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+  }
+  @media screen and (max-width: 400px) {
+    .menu.responsive {
+       
+        height: 120px;
+        padding-top: 40px;
+        
+    }
+    .menu.responsive .icon {
+      position: absolute;
+      top: 13px;
+      right: 20px;
+      
+    }
+    .menu.responsive a {
+      display: block;
+      text-align: left;
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 315px){
+        .leiras p{
+            font-size: 3vw;
+            line-height: 9px;
+        }
+      .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:  55vw 38vw 75vw 60vw 45vw 50vw 65vw 50vw;
+        
+    }
+
+  }

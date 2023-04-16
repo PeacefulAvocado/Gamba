@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link id="theme" rel="stylesheet" type="text/css" href="style.css" />
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3425/3425938.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
     <script src="https://use.fontawesome.com/d989f6e427.js"></script>
     <title>Játékok</title>
 </head>
@@ -20,10 +20,10 @@
             <div class="dropdown">
                     <button class="dropbtn"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
                     <div class="dropdown-content">
-                    <a href="#">Alapértelmezett</a>
-                    <a href="#">Relaxáló</a>
-                    <a href="#">Vidám</a>
-                    <a href="#">Goofy Ahh</a>
+                    <a onclick="toggleTheme1()" href="javascript:void(0);">Alapértelmezett</a>
+                    <a onclick="toggleTheme2()" href="javascript:void(0);">Sötét</a>
+                    <a onclick="toggleTheme3()" href="javascript:void(0);">Neon</a>
+                    <a onclick="toggleTheme4()" href="javascript:void(0);">Marokkó</a>
                     </div>
                   </div>
         <a href="index.html">Főoldal</a>
@@ -37,7 +37,7 @@
 
     <main>
             <div class="grid">
-                    <div class="item kep" id="cs"><img class="fooldalkep" src="cs_teaser.jpg" alt="Counter Strike 1.6"></div>
+                    <div class="item kep" id="cs"><img class="fooldalkep" src="img/cs_teaser.jpg" alt="Counter Strike 1.6"></div>
                     <div class="jateknev"><p>Counter Strike</p></div>
                     <div class="item leiras"><p>A Counter-Strike (röviden CS) egy taktikai, belső nézetű akciójáték (FPS), 
                         melyben a fő hangsúly a csapatjátékon van. Az első béta verzió 1999. június 19-én látta 
@@ -45,13 +45,13 @@
                         mint önálló játék is megjelent, ezt a boltban kapható független verzióját nevezzük dobozosnak 
                         (vagy retail). Emellett továbbra is elérhető Half-Life mod formájában. Frissítések mindkét 
                         változathoz letölthetők.</p></div>
-                    <div class="item kep "id ="pubg"><img class="fooldalkep" src="pubg_teaser.jpg" alt="PUBG"></div>
+                    <div class="item kep "id ="pubg"><img class="fooldalkep" src="img/pubg_teaser.jpg" alt="PUBG"></div>
                     <div class="jateknev"><p>PUBG</p></div>
                     <div class="item leiras"><p>A PlayerUnknown’s Battlegrounds (röviden: PUBG) egy többjátékos módú 
                         battle royale játék, amelyet Brendan Greene tervezett és a PUBG Studios fejleszt. A játék 
                         2017. március 23-án jelent meg korai hozzáférésű játékként a Steamen, majd 2017. december 
                         21-én került ki az 1.0-s verziója.</p></div>
-                    <div class="item kep " id="blackjack "><img class="fooldalkep" src="blackjack_teaser.png" alt="Blackjack"></div>
+                    <div class="item kep " id="blackjack "><img class="fooldalkep" src="img/blackjack_teaser.png" alt="Blackjack"></div>
                     <div class="jateknev"><p>Blackjack</p></div>
                     <div class="item leiras"><p>A huszonegy egy kártyajáték, melyet 52 lapos francia kártyával 
                         játszanak dzsókerek nélkül. Blackjack néven is ismert. A játék célja, hogy a játékos 
@@ -63,16 +63,16 @@
         <div class="keszitok">
                 
             <h2 class="keszitettek">Készítették:</h2>
-            <hr>
+            <hr class="vonal">
             <ul>
                    <li> 
-                    <a href="https://www.instagram.com/k054.daniel/"><i class="fa fa-instagram"></i> Kósa Dániel</a>
+                    <a href="https://www.instagram.com/k054.daniel/" target="_blank"><i class="fa fa-instagram"></i> Kósa Dániel</a>
                     </li>
                    <li>
-                    <a href="https://www.instagram.com/tothjonas/"><i class="fa fa-instagram"></i> Tóth Jónás</a>
+                    <a href="https://www.instagram.com/tothjonas/" target="_blank"><i class="fa fa-instagram"></i> Tóth Jónás</a>
                 </li> 
                    <li>
-                    <a href="https://www.instagram.com/bence_acs/"> <i class="fa fa-instagram"></i> Ács Bence</a>
+                    <a href="https://www.instagram.com/bence_acs/" target="_blank"> <i class="fa fa-instagram"></i> Ács Bence</a>
                 </li>
             </ul>
             
@@ -90,5 +90,25 @@
             x.className = "menu";
                 }
             }
+        function toggleTheme1() {
+            var theme = document.getElementsByTagName('link')[0];
+                theme.setAttribute('href', 'style.css');
+           
+        }
+        function toggleTheme2() {
+            var theme = document.getElementsByTagName('link')[0];
+                theme.setAttribute('href', 'style2.css');
+           
+        }
+        function toggleTheme3() {
+            var theme = document.getElementsByTagName('link')[0];
+                theme.setAttribute('href', 'style3.css');
+           
+        }
+        function toggleTheme4() {
+            var theme = document.getElementsByTagName('link')[0];
+                theme.setAttribute('href', 'style4.css');
+           
+        }
         </script>
 </html>

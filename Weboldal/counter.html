@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/franksouza183/fs/256/Apps-counter-strike-icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="aloldal.css">
+    <link rel="icon" type="image/x-icon" href="img/cs_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Counter Strike</title>
 </head>
 <body>
@@ -18,10 +18,10 @@
                     <div class="dropdown">
                             <button class="dropbtn"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
                             <div class="dropdown-content">
-                            <a href="#">Alapértelmezett</a>
-                            <a href="#">Relaxáló</a>
-                            <a href="#">Vidám</a>
-                            <a href="#">Goofy Ahh</a>
+                                <a onclick="toggleTheme1()" href="javascript:void(0);">Alapértelmezett</a>
+                                <a onclick="toggleTheme2()" href="javascript:void(0);">Sötét</a>
+                                <a onclick="toggleTheme3()" href="javascript:void(0);">Neon</a>
+                                <a onclick="toggleTheme4()" href="javascript:void(0);">Marokkó</a>
                             </div>
                           </div>
                 <a href="index.html">Főoldal</a>
@@ -44,7 +44,7 @@
                                 A pénzdíjas versenyek nagyobb részét még mindig a Counter-Strike 1.6 alatt játsszák, noha a 
                                 Counter-Strike: Source már régen elkészült, a nagyobb gépigénye és játékmenetbeli hiányosságai 
                                 miatt csak később kezdett e téren az elődje nyomaiba lépni.</p></div>
-                                <div class="item kep" id="cs"><img class="aloldalkep" src="https://synhosting.eu/img/service/1004.png" alt="Counter Strike 1.6 bemutatása"></div>
+                                <div class="item kep" id="cs"><img class="aloldalkep" src="img/cs_bemutatas.png" alt="Counter Strike 1.6 bemutatása"></div>
                                 
                         <div class="item leiras"><h2>Játékmenet</h2><p>
                                 A fejlesztők megpróbálták pontosan annyira élethűre alakítani a játékmenetet, hogy az még ne menjen a 
@@ -56,7 +56,7 @@
                                 záras mesterlövészpuska. Mindkét típusból egyet-egyet vihetünk magunkkal induláskor, melyeket vásárlással 
                                 szerezhetünk meg. Minden megölt ember ($300) és megnyert kör után pénzt kap a játékos. Túszok, csapattársak sebzéséért, pénzmegvonás jár.
                                </p></div>
-                               <div class="item kep" id="cs"><img class="aloldalkep" src="https://down-cs.su/images/weapons.jpg" alt="Counter Strike 1.6 fegyverek"></div>
+                               <div class="item kep" id="cs"><img class="aloldalkep" src="img/cs_fegyverek.jpg" alt="Counter Strike 1.6 fegyverek"></div>
                                
                         
                                 <div class="item leiras"><h2>Csapatok</h2><p>
@@ -67,7 +67,7 @@
                             feladatot kell végrehajtania.
                                     </p>
                         </div>
-                        <div class="item kep" id="cs"><img class="aloldalkep" src="https://people.inf.elte.hu/kituaai/webfejlbead/images/de_dust2.jpg" alt="Counter Strike 1.6 játékmenet"></div>
+                        <div class="item kep" id="cs"><img class="aloldalkep" src="img/cs_jatekmenet.jpg" alt="Counter Strike 1.6 játékmenet"></div>
                                 
                                 
                         <div class="item leiras"><h2>A feladatok</h2><p>
@@ -82,7 +82,7 @@
                                     A FY típusú pályáknak nincs konkrét feladat-tartalmuk, egyszerűen csak le kell lőni az ellenség 
                                     összes játékosát. 
                                     </p></div>
-                                    <div class="item kep" id="cs"><img class="aloldalkep" src="https://www.talkesport.com/wp-content/uploads/CS-1.6-maps-696x392.png" alt="Counter Strike 1.6 pályák"></div>
+                                    <div class="item kep" id="cs"><img class="aloldalkep" src="img/cs_palyak.png" alt="Counter Strike 1.6 pályák"></div>
                                 
                                 
                 </div>
@@ -98,6 +98,27 @@
                 x.className = "menu";
                     }
                 }
+            function toggleTheme1() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal.css');
+           
+            }
+            function toggleTheme2() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal2.css');
+           
+            }
+            function toggleTheme3() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal3.css');
+           
+            }
+            function toggleTheme4() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal4.css');
+           
+            }
+            
             </script>
     
 </body>

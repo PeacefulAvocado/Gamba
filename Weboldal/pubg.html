@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="pubg.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="aloldal.css">
+    <link rel="icon" type="image/x-icon" href="img/pubg-icon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>PUBG</title>
 </head>
 <body>
@@ -18,10 +18,10 @@
                     <div class="dropdown">
                             <button class="dropbtn"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
                             <div class="dropdown-content">
-                            <a href="#">Alapértelmezett</a>
-                            <a href="#">Relaxáló</a>
-                            <a href="#">Vidám</a>
-                            <a href="#">Goofy Ahh</a>
+                                <a onclick="toggleTheme1()" href="javascript:void(0);">Alapértelmezett</a>
+                                <a onclick="toggleTheme2()" href="javascript:void(0);">Sötét</a>
+                                <a onclick="toggleTheme3()" href="javascript:void(0);">Neon</a>
+                                <a onclick="toggleTheme4()" href="javascript:void(0);">Marokkó</a>
                             </div>
                           </div>
                 <a href="index.html">Főoldal</a>
@@ -48,7 +48,7 @@
 
                                 
                                 </p></div>
-                                <div class="item kep" id="cs"><img class="aloldalkep" src="pubg_fo.jpg" alt="PUBG bemutatása"></div>
+                                <div class="item kep" id="cs"><img class="aloldalkep" src="img/pubg_fo.jpg" alt="PUBG bemutatása"></div>
                                 
                         <div class="item leiras"><h2>Játékmenet</h2><p>
                             A játékmenet során a játékosok egy repülőgépről szállnak ki a szigetre, majd gyűjtik az eszközöket, 
@@ -56,7 +56,7 @@
                             folyamatosan csökken, ami arra kényszeríti a játékosokat, hogy összecsapjanak egymással és a túlélésükért 
                             harcoljanak. Az utolsó játékos vagy csapat nyeri meg a játékot.
                                </p></div>
-                               <div class="item kep" id="cs"><img class="aloldalkep" src="pubg_repulo.jpg" alt="Pubg Repülő"></div>
+                               <div class="item kep" id="cs"><img class="aloldalkep" src="img/pubg_repulo.jpg" alt="Pubg Repülő"></div>
                                
                         
                                 <div class="item leiras"><h2>Stratégia</h2><p>
@@ -66,7 +66,7 @@
                                     mikor harcoljanak.
                                     </p>
                         </div>
-                        <div class="item kep" id="cs"><img class="aloldalkep" src="pubg_jatekmenet.png" alt="PUBG játékmenet"></div>
+                        <div class="item kep" id="cs"><img class="aloldalkep" src="img/pubg_jatekmenet.png" alt="PUBG játékmenet"></div>
                                 
                                 
                         <div class="item leiras"><h2>A közösség</h2><p>
@@ -75,7 +75,7 @@
                             mindegyike kihívást jelent a játékosoknak és lehetőséget nyújt arra, hogy fejlesszék a játékképességeiket. 
                             A PUBG a Battle Royale műfaj egyik legismertebb és legnépszerűbb játéka.
                                     </p></div>
-                                    <div class="item kep" id="cs"><img class="aloldalkep" src="pubg_online.png" alt="PUBG online"></div>
+                                    <div class="item kep" id="cs"><img class="aloldalkep" src="img/pubg_online.png" alt="PUBG online"></div>
                                 
                                 
                 </div>
@@ -91,6 +91,26 @@
                 x.className = "menu";
                     }
                 }
+            function toggleTheme1() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal.css');
+           
+            }
+            function toggleTheme2() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal2.css');
+           
+            }
+            function toggleTheme3() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal3.css');
+           
+            }
+            function toggleTheme4() {
+                var theme = document.getElementsByTagName('link')[0];
+                    theme.setAttribute('href', 'aloldal4.css');
+           
+            }
             </script>
     
 </body>
