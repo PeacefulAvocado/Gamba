@@ -20,6 +20,9 @@ var splitsz = 0;
 var aceacesplitvane = false;
 var double = -1;
 
+
+
+
 function Keveres()
 {
     for (let i = 0; i < 52; i++) {
@@ -55,7 +58,7 @@ function Ertek(szereplo)
 function Osztas() 
 {
     document.getElementById("insurance").style.display = "none";
-    Keveres();
+    //Keveres();
     jatekos.push(lapok[szamlalo]);
     Kep(lapok[szamlalo][1], 'jatekos', "create")
     szamlalo++;
@@ -80,7 +83,7 @@ function Osztas()
     {
         document.getElementById("double").style.display = "inline";
     }
-    if (jatekos[0][1][0] == jatekos[1][1][0] && bank >= bet)  
+    if (jatekos[0][0][0] == jatekos[1][0][0] && bank >= bet)  
     {
         document.getElementById("split").style.display = "inline";
     }
@@ -144,11 +147,6 @@ function Kep(lap, szereplo, create)
         var img = document.createElement("img");
         img.src=filename;
         img.className="kartyalap";
-        /*const x = asd.offsetLeft;
-        const y = asd.offsetTop;
-        console.log(x, y)
-        document.getElementById("beuszo").style.transform = "translateX(" + x + "px)";
-        document.getElementById("beuszo").style.transform = "translateY(" + y + "px)";*/
         var src = document.getElementById(szereplo);
         src.appendChild(img);
     }
@@ -163,6 +161,11 @@ async function RevealDealer()
     var hatlap = document.getElementById("hatlap");
     var filename = Kep(dealer[0][1],"dealer","");
     hatlap.src = filename;
+    Ertek("dealer");
+    if (dertek > 21 && dealer[0][1] == "AH" || dealer[0][1] == "AD" || dealer[0][1] == "AS" || dealer[0][1] == "AC")
+    {
+        dealer[0][0] = 1;
+    }
     Ertek("dealer");
 }
 
@@ -499,8 +502,8 @@ async function Stand()
 {
     if (!split || splitsz == 1)  
     {
-        RevealDealer();
-        Ertek("dealer");
+        await RevealDealer();
+        Ertek("dealer"); 
         while(jertek >= dertek && dertek < 17)
         {
             for (let i = 0; i < dealer.length; i++)
@@ -551,7 +554,7 @@ async function Stand()
                     document.getElementById("dertek").innerHTML = "Bust";
                     if (split)
                     {
-                        End(3);
+                        await End(3);
                     }
                     else 
                     {
@@ -577,7 +580,7 @@ async function Stand()
                     document.getElementById("dertek").innerHTML = "Bust";
                     if (split)
                     {
-                        End(3);
+                        await End(3);
                     }
                     else 
                     {
@@ -603,7 +606,7 @@ async function Stand()
                     document.getElementById("dertek").innerHTML = "Bust";
                     if (split)
                     {
-                        End(3);
+                        await End(3);
                     }
                     else 
                     {
@@ -629,7 +632,7 @@ async function Stand()
                     document.getElementById("dertek").innerHTML = "Bust";
                     if (split)
                     {
-                        End(3);
+                        await End(3);
                     }
                     else 
                     {
@@ -648,7 +651,7 @@ async function Stand()
                     document.getElementById("dertek").innerHTML = "Bust";
                     if (split)
                     {
-                        End(3);
+                        await End(3);
                     }
                     else 
                     {
@@ -698,7 +701,8 @@ async function Stand()
 function Start()
 {
     document.getElementById("beuszo").style.opacity = "1";
-    lapok = [[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
+    //lapok = [[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
+    lapok = [[3, '3H'], [11, 'AH'], [3, '3H'], [11, 'AH'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
     jatekos = [];
     jatekos_split = [];
     dealer = [];
@@ -839,6 +843,7 @@ async function End(bust)
         else if (jsertek > dertek && jsertek <= 21 && dertek <= 21)
         {
             bank = bank + 2 * bet2;
+            bet2 = 0;
             document.getElementById("bet").innerHTML ="Bet:"+ 0;
             document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
@@ -865,6 +870,7 @@ async function End(bust)
             else if (jsertek <=21 && dertek > 21)
             {
                 bank = bank + 2 * bet2;
+                bet2 = 0;
                 document.getElementById("bet").innerHTML ="Bet:"+ 0;
                 document.getElementById("bank").innerHTML = "Bank:" +bank;
                 eredmeny = "Nyertél!";
@@ -900,9 +906,10 @@ async function End(bust)
         document.getElementById("bet").innerHTML ="Bet:"+ 0;
             document.getElementById("bank").innerHTML = "Bank:" +bank;
         }
-        else if (jertek > dertek && jertek <= 21 && dertek <= 21)
+        else if (jertek <=21 && dertek > 21)
         {
             bank = bank + 2 * bet1;
+            bet1 = 0;
             document.getElementById("bet").innerHTML ="Bet:"+ 0;
             document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
@@ -928,9 +935,10 @@ async function End(bust)
             document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
         }
-        else if (jertek <=21 && dertek > 21)
+        else if (jertek > dertek && jertek <= 21 && dertek <= 21)
         {
             bank = bank + 2 * bet1;
+            bet1 = 0;
             document.getElementById("bet").innerHTML ="Bet:"+ 0;
             document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Nyertél!";
@@ -954,13 +962,13 @@ async function End(bust)
         bank = bank+Math.floor(bet*2.5)
         bet = 0;
         document.getElementById("bet").innerHTML ="Bet:"+ 0;
-                document.getElementById("bank").innerHTML = "Bank:" +bank;}
-                else{
-                    bank = bank + bet;
-                document.getElementById("bet").innerHTML ="Bet:"+ 0;
-                document.getElementById("bank").innerHTML = "Bank:" +bank;
-                eredmeny = "Push!";
-                }
+        document.getElementById("bank").innerHTML = "Bank:" +bank;}
+        else{
+            bank = bank + bet;
+        document.getElementById("bet").innerHTML ="Bet:"+ 0;
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
+        eredmeny = "Push!";
+        }
 
     }
     if (!split)
@@ -988,7 +996,8 @@ function Menu()
     var l = images.length;
     for (var i = 0; i < l; i++) {
         images[0].parentNode.removeChild(images[0]);
-    }
+    } localStorage.setItem("localBank", bank);
+    
     document.getElementById("jatek").style.display = "none";
     document.getElementById("gombok").style.display = "flex";
     document.getElementById("deal").style.display = "inline";
@@ -1106,10 +1115,13 @@ function fordit(){
 
 async function Utmutato(){
     document.getElementById("overlay").style.display = "block";
+    if(localStorage.getItem("localBank") != 1000) {
+        bank = Number(localStorage.getItem("localBank")); 
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
+    }
 }
 
 function Ertettem(){
     document.getElementById("overlay").style.display = "none";
     document.getElementById("utmutato").style.display = "none";
 }
-

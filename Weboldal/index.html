@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link id="theme" rel="stylesheet" type="text/css" href="style.css">
+    <link id="theme" rel="stylesheet" type="text/css" href="style1.css">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3425/3425938.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/d989f6e427.js"></script>
     <title>Játékok</title>
+    <script src="main.js"></script>
 </head>
-<body>
+<body onload="Configure('mainpage')">
     <header>
         <h1>Játékok</h1>
     </header>
@@ -20,10 +21,10 @@
             <div class="dropdown">
                     <button class="dropbtn"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
                     <div class="dropdown-content">
-                    <a onclick="toggleTheme1()" href="javascript:void(0);">Alapértelmezett</a>
-                    <a onclick="toggleTheme2()" href="javascript:void(0);">Sötét</a>
-                    <a onclick="toggleTheme3()" href="javascript:void(0);">Neon</a>
-                    <a onclick="toggleTheme4()" href="javascript:void(0);">Marokkó</a>
+                    <a onclick="toggleTheme('style',1)" href="javascript:void(0);">Alapértelmezett</a>
+                    <a onclick="toggleTheme('style',2)" href="javascript:void(0);">Sötét</a>
+                    <a onclick="toggleTheme('style',3)" href="javascript:void(0);">Neon</a>
+                    <a onclick="toggleTheme('style',4)" href="javascript:void(0);">Marokkó</a>
                     </div>
                   </div>
         <a href="index.html">Főoldal</a>
@@ -81,35 +82,5 @@
     </footer>
     
 
-<script>
-        function Menu() {
-            var x = document.getElementById("menu");
-            if (x.className === "menu") {
-                x.className += " responsive";
-            } else {
-            x.className = "menu";
-                }
-            }
-        function toggleTheme1() {
-            var theme = document.getElementsByTagName('link')[0];
-                theme.setAttribute('href', 'style.css');
-           
-        }
-        function toggleTheme2() {
-            var theme = document.getElementsByTagName('link')[0];
-                theme.setAttribute('href', 'style2.css');
-           
-        }
-        function toggleTheme3() {
-            var theme = document.getElementsByTagName('link')[0];
-                theme.setAttribute('href', 'style3.css');
-           
-        }
-        function toggleTheme4() {
-            var theme = document.getElementsByTagName('link')[0];
-                theme.setAttribute('href', 'style4.css');
-           
-        }
-</script>
 </body>
 </html>
