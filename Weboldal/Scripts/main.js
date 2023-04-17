@@ -10,7 +10,7 @@ function Menu() {
 
 function toggleTheme(type,index) {
     var theme = document.getElementsByTagName('link')[0];
-        theme.setAttribute('href', `${type}${index}.css`);
+        theme.setAttribute('href', `Styles/${type}${index}.css`);
         localStorage.setItem("globalTheme",index)
    
 }
