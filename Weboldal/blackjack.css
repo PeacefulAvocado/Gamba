@@ -34,9 +34,7 @@ body {
     color: white;
 }
 
-/*#contents {
-    padding: 0 15%;
-}*/
+
 .texts * {
     display: inline;
 }
@@ -157,12 +155,17 @@ body {
     text-align: center;
 }
 
-#contents {
+#contents   {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-height: 110vh;
+}
+#utmutato {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .texts {
 
     display: flex;
@@ -211,7 +214,7 @@ body {
     padding-bottom: 20px;
     width: 80%;
     background-color: var(--menu_bgcolor);
-    position: sticky;
+
     top: 0;
     z-index: 999;
       }
@@ -312,12 +315,49 @@ body {
     }
   }
 
-.beuszo {
-    width: auto;
-    height: 250px;
-    position: absolute;
-    top:20vw;
-    right:2vw;
-    transition: all 0.2s ease-in-out;
-    opacity: 0;
+
+
+
+  #utmutato {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: gold;
+
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+#utmutato h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#utmutato ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#utmutato li {
+    background-color: darkgreen;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#utmutato li:first-child {
+    margin-top: 10px;
+}
+
+#utmutato a {
+    text-decoration: none;
+}
+
+#ertettem {
+    margin-left: auto;
+    display: flex;
+}
+

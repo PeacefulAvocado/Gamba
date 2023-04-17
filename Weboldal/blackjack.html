@@ -9,7 +9,7 @@
     <script src="blackjack.js"></script>
     <script src="https://use.fontawesome.com/d989f6e427.js"></script>
 </head>
-<body onload="Utmutato()">
+<body onload="bankConfig()">
     
     <header>
         <h1>BlackJack</h1>
@@ -60,7 +60,7 @@
             <div id="jatek">
                 <div id="dealer">
                     <div class="ingametxt">
-                         <h1>Dealer:</h1>
+                         <h2>Dealer:</h2>
                     <h3 id="dertek">Ertek: </h3>
                     </div>
                    
@@ -68,7 +68,7 @@
                 </div>
                 <div id="jatekos">
                     <div class="ingametxt">
-                         <h1>Jatekos:</h1>
+                         <h2>Játékos:</h2>
                     <h3 id="jertek">Ertek: </h3>
                     </div>
                    
@@ -86,70 +86,71 @@
             <div id="overlay"><p id="eredmeny"></p>
 
                 
-            <section id="utmutato">
-                    <div>
-                        <h3>Blackjack <br> Útmutató a játékhoz</h3>
-                 
-                    <ul>
-                        <li>
-                            A játékos $1000 pénzzel kezd, a játék során összegyűjtött pénzét a 'Bank' felirat mellet láthatja
-                        </li>
-                        <li>
-                            A játékos a zsetonok gomjaival választhatja ki a megtenni kívánt tétet, ezt a 'Bet' felirat mellet láthatja <br>
-                            A + és - gombok segítségével lehet kiválasztani, hogy éppen hozzá adni, vagy elvenni kívánjuk a zsetonokat <br>
-                            Az 'All in' gombbal a jelenlegi összes pénzünket tehetjük meg tétként
-                          
-                        </li>
-                        <li>
-                            A 'Deal' gombra kattintva indíthatjuk el a játékot
-                        </li>
-                        <br>
-                        <li>
-                            A játékos és az osztó 2-2 lapot kap, az osztó egyik lapja lefordítva van az asztalon <br>
-                            A játék célja, hogy a játékos lapjainak összege minnél közelebb legyen a 21-hez, de ne haladja meg azt <br>
-                            Emellett az osztó is fontos szerepet tölt be: ha az osztó lapjainak összege több mint a játékosé és kisebb 21-nél akkor az osztó nyer
-                        </li>
-                        <br>
-                        <li>
-                            HIT <br>
-                            Új lap kérése <br>
-                            Bármennyiszer végrehajtható lépés, amennyiben az összeg kevesebb 21-nél
-                        </li>
-                        <li>
-                            STAND <br>
-                            A kör befejezése: az osztó megmutatja lapjait és eldől a kör kimenetele
-                        </li>
-                        <li>
-                            DOUBLE <br>
-                            A tét megduplázása és egy lap húzása <br>
-                            Csak a kör első lépése lehet
-                        </li>
-                        <li>
-                            SPLIT <br>
-                            Ha két egyenlő értékű lapunk van akkor kettéválszthatjuk ezeket és a két lap külön-külön körként játszható le <br>
-                            A lapok kettéválasztása után mindkét kéz kap 1-1 lapot, hogy a körök mindig két lappal induljanak <br>
-                            Az osztó lapjai mindkét kéz esetén ugyanazok <br>
-                            Csak a kör első lépése lehet <br>
-
-                        </li>
-                        <li>
-                            INSURANCE <br>
-                            Biztosíték kérése <br>
-                            Akkor lehetséges, ha az osztó látható lapja ász <br>
-                            A kör elején feltett tétünk felének megeggyező értékkel fogadunk arra, hogy az osztónak blackjack-je van <br>
-                            Csak a kör első lépése lehet
-                        </li>
-                    </ul>
-                    <button onclick="Ertettem()" class="ingamebuttons">Megértettem</button>
-
-                     </div>
-            </section>
+            
 
             
             </div>
             
-            <img src="card-img/back_red.png" id ="beuszo" class="beuszo"> 
+            
     </section>
+    <section id="utmutato">
+        <div>
+            <h3>Útmutató a játékhoz</h3>
+     
+        <ul>
+            <li>
+                A játékos $1000 pénzzel kezd, a játék során összegyűjtött pénzét a 'Bank' felirat mellet láthatja
+            </li>
+            <li>
+                A játékos a zsetonok gomjaival választhatja ki a megtenni kívánt tétet, ezt a 'Bet' felirat mellet láthatja <br>
+                A + és - gombok segítségével lehet kiválasztani, hogy éppen hozzá adni, vagy elvenni kívánjuk a zsetonokat <br>
+                Az 'All in' gombbal a jelenlegi összes pénzünket tehetjük meg tétként
+              
+            </li>
+            <li>
+                A 'Deal' gombra kattintva indíthatjuk el a játékot
+            </li>
+            <br>
+            <li>
+                A játékos és az osztó 2-2 lapot kap, az osztó egyik lapja lefordítva van az asztalon <br>
+                A játék célja, hogy a játékos lapjainak összege minnél közelebb legyen a 21-hez, de ne haladja meg azt <br>
+                Emellett az osztó is fontos szerepet tölt be: ha az osztó lapjainak összege több mint a játékosé és kisebb 21-nél akkor az osztó nyer
+            </li>
+            <br>
+            <li>
+                HIT <br>
+                Új lap kérése <br>
+                Bármennyiszer végrehajtható lépés, amennyiben az összeg kevesebb 21-nél
+            </li>
+            <li>
+                STAND <br>
+                A kör befejezése: az osztó megmutatja lapjait és eldől a kör kimenetele
+            </li>
+            <li>
+                DOUBLE <br>
+                A tét megduplázása és egy lap húzása <br>
+                Csak a kör első lépése lehet
+            </li>
+            <li>
+                SPLIT <br>
+                Ha két egyenlő értékű lapunk van akkor kettéválszthatjuk ezeket és a két lap külön-külön körként játszható le <br>
+                A lapok kettéválasztása után mindkét kéz kap 1-1 lapot, hogy a körök mindig két lappal induljanak <br>
+                Az osztó lapjai mindkét kéz esetén ugyanazok <br>
+                Csak a kör első lépése lehet <br>
+
+            </li>
+            <li>
+                INSURANCE <br>
+                Biztosíték kérése <br>
+                Akkor lehetséges, ha az osztó látható lapja ász <br>
+                A kör elején feltett tétünk felének megeggyező értékkel fogadunk arra, hogy az osztónak blackjack-je van <br>
+                Csak a kör első lépése lehet
+            </li>
+        </ul>
+        <a href="#contents"><button onclick="Ertettem()" id="ertettem" class="ingamebuttons"> Megértettem</button></a>
+
+         </div>
+</section>
     <script>
         function Feezer() {
             var x = document.getElementById("menu");

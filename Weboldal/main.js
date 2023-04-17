@@ -17,10 +17,11 @@ function toggleTheme(type,index) {
 
 
 function Configure(page) {
+    if (localStorage.getItem("globalTheme") != null){
     if(page == "mainpage") {
         toggleTheme("style",localStorage.getItem("globalTheme"))
     } else {
         toggleTheme("aloldal",localStorage.getItem("globalTheme"))
-    }
+    }}
     
 }
