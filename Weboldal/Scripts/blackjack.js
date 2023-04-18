@@ -1010,6 +1010,7 @@ function Menu()
     document.getElementById("deal").style.display = "inline";
     document.getElementById("row.operator").style.display = "inline";
     document.getElementById("reset").style.display = "inline";
+    lapok = [[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
 }
 
 // várakozás
