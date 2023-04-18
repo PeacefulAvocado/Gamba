@@ -15,6 +15,7 @@ html {
     background: radial-gradient(circle, rgb(22, 189, 92) 0%, rgb(0, 102, 43) 100%);
     background-repeat: repeat;
     background-size: cover;
+    scroll-behavior: smooth;
 }
 header{
     position: relative;
@@ -23,7 +24,9 @@ header{
     background: linear-gradient(to top, var(--cim_linear1) 0%, var(--cim_linear2) 30%);
 }
 
-
+#reset {
+    margin-top: 1%;
+}
   h1{
     text-align: center;
     font-size: 4vw;
@@ -89,7 +92,7 @@ body {
 
 }
 
-button:has(.chip) {
+.chipbutton {
     border: none;
     background: none;
 }
@@ -284,7 +287,7 @@ body {
     .menu a.icon {
         position: absolute;
         font-size: 20px;
-        top: 13px;
+        top: 48px;
         right: 20px;
         display: block;
         width: auto;
@@ -304,7 +307,7 @@ body {
     }
     .menu.responsive .icon {
       position: absolute;
-      top: 13px;
+      top: 48px;
       right: 20px;
       
     }

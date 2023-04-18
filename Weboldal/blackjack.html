@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BlackJack</title>
     <link rel="stylesheet" href="Styles/blackjack.css">
+    <link rel="icon" type="image/x-icon" href="img/blackjack-icon.png">
     <script src="Scripts/blackjack.js"></script>
     <script src="https://use.fontawesome.com/d989f6e427.js"></script>
 </head>
@@ -39,15 +40,15 @@
             
             <div id="gombok">
                
-                <button onclick="Add(1)" ><img src="Chicks/1.png" alt="1" class="chip"></button>
-                <button onclick="Add(5)"><img src="Chicks/5.png" alt="5" class="chip"></button>
-                <button onclick="Add(25)"><img src="Chicks/25.png" alt="25" class="chip"></button>
-                <button onclick="Add(50)"><img src="Chicks/50.png" alt="50" class="chip"></button>
-                <button onclick="Add(100)"><img src="Chicks/100.png" alt="100" class="chip"></button>
-                <button onclick="Add(500)"><img src="Chicks/500.png" alt="500" class="chip"></button>
-                <button onclick="Add(1000)"><img src="Chicks/1000.png" alt="1000" class="chip"></button>
-                <button onclick="Add(5000)"><img src="Chicks/5000.png" alt="5000" class="chip"></button>
-                <button onclick="Add(10000)"><img src="Chicks/10000.png" alt="10000" class="chip"></button>
+                <button onclick="Add(1)" class="chipbutton"><img src="Chicks/1.png" alt="1" class="chip"></button>
+                <button onclick="Add(5)" class="chipbutton"><img src="Chicks/5.png" alt="5" class="chip"></button>
+                <button onclick="Add(25)" class="chipbutton"><img src="Chicks/25.png" alt="25" class="chip"></button>
+                <button onclick="Add(50)" class="chipbutton"><img src="Chicks/50.png" alt="50" class="chip"></button>
+                <button onclick="Add(100)" class="chipbutton"><img src="Chicks/100.png" alt="100" class="chip"></button>
+                <button onclick="Add(500)" class="chipbutton"><img src="Chicks/500.png" alt="500" class="chip"></button>
+                <button onclick="Add(1000)" class="chipbutton"><img src="Chicks/1000.png" alt="1000" class="chip"></button>
+                <button onclick="Add(5000)" class="chipbutton"><img src="Chicks/5000.png" alt="5000" class="chip"></button>
+                <button onclick="Add(10000)" class="chipbutton"><img src="Chicks/10000.png" alt="10000" class="chip"></button>
                 
                 
                 
@@ -56,7 +57,10 @@
                 <button id="modeselector" onclick="Mode()" class="operator">+</button>
                 <button onclick="Add('allin')" id="allin" class="operator">All in</button>
                 <button onclick="Start()" id="deal" class="operator">Deal</button>
+               
             </div>
+            <button onclick="Reset()" id = "reset"  class="ingamebuttons">Reset Game</button>
+            
             <div id="jatek">
                 <div id="dealer">
                     <div class="ingametxt">
@@ -80,6 +84,7 @@
                     <button onclick="Double()" id="double" class="ingamebuttons">Double</button>
                     <button onclick="Split()" id="split" class="ingamebuttons">Split</button>
                     <button onclick="Insurance()" id="insurance" class="ingamebuttons">Insurance</button>
+                    
                 </div>
                 
             </div>
@@ -110,13 +115,13 @@
             <li>
                 A 'Deal' gombra kattintva indíthatjuk el a játékot
             </li>
-            <br>
+           
             <li>
                 A játékos és az osztó 2-2 lapot kap, az osztó egyik lapja lefordítva van az asztalon <br>
                 A játék célja, hogy a játékos lapjainak összege minnél közelebb legyen a 21-hez, de ne haladja meg azt <br>
                 Emellett az osztó is fontos szerepet tölt be: ha az osztó lapjainak összege több mint a játékosé és kisebb 21-nél akkor az osztó nyer
             </li>
-            <br>
+            
             <li>
                 HIT <br>
                 Új lap kérése <br>
@@ -147,7 +152,7 @@
                 Csak a kör első lépése lehet
             </li>
         </ul>
-        <a href="#contents"><button onclick="Ertettem()" id="ertettem" class="ingamebuttons"> Megértettem</button></a>
+        <button onclick="Ertettem()" id="ertettem" class="ingamebuttons">Megértettem</button>
 
          </div>
 </section>

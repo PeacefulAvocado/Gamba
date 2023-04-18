@@ -1,10 +1,7 @@
 //a pakli teteje a legelso
 var lapok = [[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
 
-//var lapok =[[10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC'],[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C']]
-
-//var lapok =[[11, 'AH'], [10, 'QD'], [11, 'AD'], [11, 'AH'],[10, 'JD'], [7, '7H'], [8, '8H'], [6, '6H'],[10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC'],[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C']]
-
+// deklaráció
 var szamlalo = 0;
 var jatekos = [];
 var jatekos_split = [];  
@@ -22,7 +19,7 @@ var double = -1;
 
 
 
-
+//pakli keverése
 function Keveres()
 {
     for (let i = 0; i < 52; i++) {
@@ -33,6 +30,7 @@ function Keveres()
     }
 }
 
+// dealer és játékos kezeinek összegzése
 function Ertek(szereplo)
 {
     if (szereplo == "jatekos")
@@ -54,7 +52,7 @@ function Ertek(szereplo)
         document.getElementById("jertek").innerHTML = "Érték: " +jsertek;
     }
 }
-
+// első 4 lap kiosztása
 function Osztas() 
 {
     document.getElementById("insurance").style.display = "none";
@@ -73,7 +71,7 @@ function Osztas()
     szamlalo++;
     document.getElementById("dertek").innerHTML = "Érték: "+dealer[1][0];
     Ertek("jatekos");
-    if (jertek == 21)
+    if (jertek == 21) //a különleges lépések feltételeinek ellenőrzése, ha teljesül az adott funkció gomja megjelenik
     {
         End(4);
         
@@ -83,7 +81,7 @@ function Osztas()
     {
         document.getElementById("double").style.display = "inline";
     }
-    if (jatekos[0][0][0] == jatekos[1][0][0] && bank >= bet)  
+    if (jatekos[0][0] == jatekos[1][0] && bank >= bet)  
     {
         document.getElementById("split").style.display = "inline";
     }
@@ -99,12 +97,14 @@ function Osztas()
     }
 
 }
+
+// kártyalapok megjelenítése
 function Kep(lap, szereplo, create)
 {
     var filename ="";
     var szam = lap[0];
     var version = "";
-    if(lap == "back") {
+    if(lap == "back") { //hátoldalas kártya generálás
         filename ="card-img/back_red.png";
         var img = document.createElement("img");
         img.src=filename;
@@ -113,7 +113,7 @@ function Kep(lap, szereplo, create)
         var src = document.getElementById(szereplo);
         src.appendChild(img);
     }else {
-        if (szam == "A") {
+        if (szam == "A") { //fájlnév összerakása
             szam = "ace";
         } else if (szam == "J") {
             szam = "jack";
@@ -154,6 +154,7 @@ function Kep(lap, szereplo, create)
     }
 }
 
+// dealer lefordított lapjának megfordítása
 async function RevealDealer()
 {
     fordit();
@@ -169,11 +170,13 @@ async function RevealDealer()
     Ertek("dealer");
 }
 
+// kártyahúzás
 function Hit()
 {  
     document.getElementById("double").style.display = "none";
     document.getElementById("insurance").style.display = "none";
     document.getElementById("split").style.display = "none";
+    // ászok kezelése
     if (splitsz == 0)  
     {   
         Ertek("jatekos");
@@ -335,7 +338,8 @@ function Hit()
             Stand();
         }
     }
-    else // slpitv
+    // ászok kezelése a második kézben (split)
+    else
     {
         Ertek("jatekos_split");
         for (let i = 0; i < jatekos_split.length; i++)
@@ -498,8 +502,10 @@ function Hit()
     }
 }
 
+// Stand
 async function Stand()
 {
+    //játék vége
     if (!split || splitsz == 1)  
     {
         await RevealDealer();
@@ -671,6 +677,7 @@ async function Stand()
         }
         
     }
+    // stand az első kéznél (split)
     else
     {
         var images = document.getElementsByClassName('kartyalap');
@@ -698,11 +705,10 @@ async function Stand()
     }
 }
 
-function Start()
+function Start() //pakli és szereplők kezeinek inicializálása, játéktér váltás
 {
     
     lapok = [[11, 'AH'], [2, '2H'], [3, '3H'], [4, '4H'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
-    //lapok = [[3, '3H'], [11, 'AH'], [3, '3H'], [11, 'AH'], [5, '5H'], [6, '6H'], [7, '7H'], [8, '8H'], [9, '9H'], [10, '10H'], [10, 'JH'], [10, 'QH'], [10, 'KH'],[11, 'AD'], [2, '2D'], [3, '3D'], [4, '4D'], [5, '5D'], [6, '6D'], [7, '7D'], [8, '8D'], [9, '9D'], [10, '10D'], [10, 'JD'], [10, 'QD'], [10, 'KD'],[11, 'AS'], [2, '2S'], [3, '3S'], [4, '4S'], [5, '5S'], [6, '6S'], [7, '7S'], [8, '8S'], [9, '9S'], [10, '10S'], [10, 'JS'], [10, 'QS'], [10, 'KS'],[11, 'AC'], [2, '2C'], [3, '3C'], [4, '4C'], [5, '5C'], [6, '6C'], [7, '7C'], [8, '8C'], [9, '9C'], [10, '10C'], [10, 'JC'], [10, 'QC'], [10, 'KC']];
     jatekos = [];
     jatekos_split = [];
     dealer = [];
@@ -714,13 +720,13 @@ function Start()
         document.getElementById("deal").style.display = "none";
         document.getElementById("row.operator").style.display = "none";
         
-        document.getElementById("deal").style.display = "none";
+        document.getElementById("reset").style.display = "none";
         Osztas();
     }
 
 }
 
-function Mode()
+function Mode() //bet növelési mód csökkentési mód váltó
 {
     if(chip_mode)
     {
@@ -737,7 +743,7 @@ function Mode()
     }
 }
 
-function Add(amount)
+function Add(amount)//bet növelése, csökkentése
 {
     if (chip_mode) {
       if (amount <= bank)
@@ -766,7 +772,7 @@ function Add(amount)
     
 }
 
-async function End(bust)
+async function End(bust) //a játék vége, nyeremény kiosztása
 {
     // 0 - játékos bust
     // 1 - dealer bust
@@ -813,7 +819,7 @@ async function End(bust)
             eredmeny = "Push!";
         }
     }
-    else if (bust == 3)  
+    else if (bust == 3)  //splites játékvége
     {
         let bet1 = bet;
         let bet2 = bet;
@@ -918,7 +924,6 @@ async function End(bust)
         }
         else if (dertek > jertek && jertek <= 21 && dertek <= 21)
         {
-            //bet = 0;
             document.getElementById("bet").innerHTML ="Bet:"+ 0;
             document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
@@ -932,7 +937,6 @@ async function End(bust)
         }
         else if (jertek > 21)
         {
-            //bet = 0;
             document.getElementById("bet").innerHTML ="Bet:"+ 0;
             document.getElementById("bank").innerHTML = "Bank:" +bank;
             eredmeny = "Vesztettél!";
@@ -953,7 +957,7 @@ async function End(bust)
         splitsz = 0;
         bet = 0;
         double=-1;
-    } else if (bust==4)
+    } else if (bust==4)//balckjackes végződés
     {
         RevealDealer()
         if(dertek!=jertek ){
@@ -992,6 +996,7 @@ async function End(bust)
     });   
 }
 
+// visszalépés a Menub
 function Menu()
 {
     var images = document.getElementsByClassName('kartyalap');
@@ -1004,18 +1009,20 @@ function Menu()
     document.getElementById("gombok").style.display = "flex";
     document.getElementById("deal").style.display = "inline";
     document.getElementById("row.operator").style.display = "inline";
-   
-
+    document.getElementById("reset").style.display = "inline";
 }
 
+// várakozás
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+// double
 function Double() 
 {
     bank = bank - bet;
     document.getElementById("bank").innerHTML = "Bank:" +bank;
+    // split esetén
     if (split)
     {
         if (splitsz == 0)
@@ -1034,6 +1041,7 @@ function Double()
         document.getElementById("double").style.display = "none";
         Hit();
     }
+    // nem split
     else {
         bet = bet * 2;
         document.getElementById("bet").innerHTML ="Bet:"+ bet;
@@ -1047,6 +1055,7 @@ function Double()
     Stand();
 }
 
+// Split
 function Split()  
 {   
     if (bank <= bet)
@@ -1083,11 +1092,13 @@ function Split()
 
 var insuranceBet = 0;
 
+// Insurance
 async function Insurance(){
     document.getElementById("insurance").style.display="none";
     insuranceBet = Math.round(bet/2)
     bank = bank-insuranceBet;
     document.getElementById("bank").innerHTML="Bank:"+bank
+    // Nyert Insurance
     if(dealer[0][0] == 10)
     {
         RevealDealer();
@@ -1101,6 +1112,7 @@ async function Insurance(){
             Stand();
         })
     }
+    // vesztett Insurance
     else{
         document.getElementById("eredmeny").innerHTML = "Insurance Lost!";
         await sleep(400);
@@ -1112,12 +1124,14 @@ async function Insurance(){
     document.getElementById("insurance").style.display = "none";
 }
 
+// Kártyafordítás animáció
 function fordit(){
     document.getElementById("hatlap").style.transform ="rotateY(360deg)";
 }
 
 localStorage.setItem("firstLode",true) 
 
+// bank értékének megtartása
 function bankConfig(){
 
     if(localStorage.getItem("firstLode")==true){
@@ -1132,8 +1146,16 @@ function bankConfig(){
     localStorage.setItem("firstLode",false) 
 }
 
+// Útmutató elfogadása
 function Ertettem(){
     document.getElementById("utmutato").style.display = "none";
     document.getElementById("contents").style.display = "flex";
+    document.getElementById("contents").scrollIntoView({behavior: 'smooth'}, true);
+}
 
+// bank értékének visszaállítása
+function Reset() {
+    localStorage.setItem("localBank",1000)
+        bank = Number(localStorage.getItem("localBank")); 
+        document.getElementById("bank").innerHTML = "Bank:" +bank;
 }
